@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Genome Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 🚪 LOGOUT BUTTON -->
+    <button id="logoutBtn">Logout</button>
+
+    <!-- 🎥 Background Video -->
+    <video id="bg-video" autoplay muted loop>
+        <source src="./videos/Futuristic_Bi_Cinematic_2.mp4" type="video/mp4">
+    </video>
+
+    <!-- 🔐 Login -->
+    <div id="login-section">
+        <h2>Login</h2>
+
+        <div id="g_id_onload"
+             data-client_id="143834650493-rgknsdmt80mbrtd9vm1em448r1na0ugr.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse">
+        </div>
+
+        <div class="g_id_signin"></div>
+    </div>
+
+    <!-- 👤 User Section -->
+    <div id="user-section" style="display:none;">
+        <h2 id="greeting">
+            Hi, <span id="username"></span> 👋  
+            what software do you want to analyze?
+        </h2>
+    </div>
+
+    <!-- 🔍 Search -->
+    <div id="search-section" style="display:none;">
+
+        <input type="text" id="softwareInput" placeholder="Search any software..." />
+
+        <select id="softwareType">
+            <option value="">Select Type</option>
+            <option value="open-source">Open Source</option>
+            <option value="proprietary">Proprietary</option>
+        </select>
+
+        <button id="analyzeBtn">Analyze</button>
+
+    </div>
+
+    <!-- 💬 RESULT BOX -->
+    <div id="result-container">
+
+        <div id="result-box" class="hidden">
+
+            <!-- ❗ ERROR MESSAGE -->
+            <div id="error-msg" class="hidden">
+                OPEN AI Limit reached. Subscribe to continue...
+                <hr>
+            </div>
+
+            <!-- 📊 DATA SECTIONS -->
+
+            <div class="section">
+                <h3>Software Name</h3>
+                <p id="software_name"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Developer / Organization</h3>
+                <p id="developer_organization"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Official Website</h3>
+                <p id="official_website"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Category</h3>
+                <p id="software_category"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>License</h3>
+                <p id="license_name"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>License Type</h3>
+                <p id="license_type"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Primary Language</h3>
+                <p id="primary_language"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Platform</h3>
+                <p id="platform"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Capability</h3>
+                <p id="capability"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Similar Software</h3>
+                <p id="similar_software"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Status</h3>
+                <p id="current_status"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Popularity</h3>
+                <p id="popularity"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Innovation</h3>
+                <p id="innovation"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Overall Score</h3>
+                <p id="overall_score"></p>
+                <hr>
+            </div>
+
+            <div class="section">
+                <h3>Images</h3>
+                <p id="images"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 🔌 Google -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!-- 🧠 JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>

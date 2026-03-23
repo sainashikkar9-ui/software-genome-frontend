@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analayzing...</title>
+    <style>
+        /* 🔥 Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: white;
+}
+
+/* 🎥 Background Video */
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* 🌑 Dark overlay (better readability) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: -1;
+}
+
+/* 🔝 Top Left Title */
+.top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #00eaff;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.7);
+}
+
+/* 🧬 Center Content */
+.content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Heading */
+.content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Subtext */
+.content p {
+    font-size: 16px;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+/* 🔻 Bottom Loading Section */
+.loading-container {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 60%;
+    max-width: 600px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+/* Progress Fill */
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #00eaff,
+        #00ff9d,
+        #00eaff
+    );
+
+    background-size: 200% 100%;
+    animation: glowMove 2s linear infinite;
+
+    transition: width 0.3s ease;
+}
+
+/* ✨ Animated gradient effect */
+@keyframes glowMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* 📱 Responsive */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .content h1 {
+        font-size: 28px;
+    }
+
+    .progress-bar {
+        width: 80%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .content h1 {
+        font-size: 22px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .progress-bar {
+        width: 90%;
+    }
+}
+    </style>
+</head>
+
+<body>
+    
+<!-- 🎥 Background Video -->
+<video autoplay muted loop id="bgVideo">
+    <source src="./videos/loading_video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+
+<!-- 🔝 Title (Top Left) -->
+<div class="top-left">
+    Software Genome Analyzer 🧬
+</div>
+
+<!-- Foreground Content -->
+<div class="content">
+    <h1>DNA Search System 🧬</h1>
+    <p>Loading research environment...</p>
+</div>
+
+<!-- 🔻 Loading Bar (Bottom) -->
+<div class="loading-container">
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+</div>
+<script src="loading.js"></script>
+</body>
+</html>
