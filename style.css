@@ -221,3 +221,29 @@ hr {
 #logoutBtn:hover {
     background: #cc0000;
 }
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* your main content wrapper */
+main {
+    flex: 1;
+}
+
+.footer {
+    text-align: center;
+    padding: 15px 10px;
+
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.5;
+
+    background: transparent; /* fully transparent */
+}
