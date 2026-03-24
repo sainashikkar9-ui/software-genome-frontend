@@ -56,7 +56,7 @@ const response = await fetch("https://software-genome-backend.onrender.com/analy
 
     } catch (error) {
         console.error(error);
-        alert("❌ Error connecting to server");
+        alert("Open AI Limits reached!");
     }
 };
 

@@ -111,6 +111,20 @@ body::before {
     transition: width 0.3s ease;
 }
 
+.powered {
+    position: absolute;
+    bottom: 80px; /* just above the bar */
+    width: 100%;
+    text-align: center;
+
+    font-size: 13px;
+    color: #aaa;
+    letter-spacing: 1px;
+
+    opacity: 0.8;
+    text-shadow: 0 0 6px rgba(0, 234, 255, 0.4);
+}
+
 /* ✨ Animated gradient effect */
 @keyframes glowMove {
     0% {
@@ -172,10 +186,16 @@ body::before {
 
 <!-- 🔻 Loading Bar (Bottom) -->
 <div class="loading-container">
+    <div class="loading-container">
+    
+    <!-- 🔥 Powered by -->
+    <p class="powered">Powered by OpenAI</p>
+
     <div class="progress-bar">
         <div class="progress-fill" id="progressFill"></div>
     </div>
 </div>
+
 <script src="loading.js"></script>
 </body>
 </html>
